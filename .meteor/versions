@@ -238,6 +238,7 @@ tmeasday:crypto-base@3.1.2
 tmeasday:crypto-md5@3.1.2
 todda00:friendly-slugs@0.6.0
 tracker@1.1.0
+twbs:bootstrap@3.3.6
 twitter@1.1.12
 ui@1.0.12
 underscore@1.0.9
