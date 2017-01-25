@@ -1,0 +1,42 @@
+<template name="ideasList">
+	<div class="content">
+		<div class="list-view ideas-list">
+			<div class="title">
+				<h2>{{_ "Ideas_List"}}</h2>
+			</div>
+			<ul class="list clearfix lines">
+				{{#each files}}
+					<li>
+						{{#if canDelete}}
+						<i class="icon-trash file-delete"></i>
+						{{/if}}
+						<a title="{{escapedName}}" href="{{url}}" target="_blank" class="file-download" download="">
+							<i class="icon-download file-download"></i>
+						</a>
+						<a title="{{escapedName}}" href="{{url}}" target="_blank" class="room-file-item file-name {{customClassForFileType}}">
+							<i class="{{getFileIcon type}}"></i>
+							<p>{{name}}</p>
+						</a>
+					</li>
+				{{/each}}
+				{{#if hasMore}}
+					<li class="load-more">
+						{{#if Template.subscriptionsReady}}
+							<button>{{_ "Has_more"}}...</button>
+						{{else}}
+							<div class="load-more-loading">{{_ "Loading..."}}</div>
+						{{/if}}
+					</li>
+				{{/if}}
+			</ul>
+			{{#if Template.subscriptionsReady}}
+				{{#unless hasFiles}}
+					<h2>{{_ "Ideas_list_empty"}}</h2>
+					<p>Siehe da: {{test}}</p>
+					<p>So viele ideen: {{ideas}}</p>
+					<p>{{look}}</p>
+				{{/unless}}
+			{{/if}}
+		</div>
+	</div>
+</template>

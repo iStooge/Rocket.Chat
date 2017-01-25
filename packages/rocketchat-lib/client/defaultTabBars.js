@@ -33,3 +33,12 @@ RocketChat.TabBar.addButton({
 	template: 'uploadedFilesList',
 	order: 3
 });
+
+RocketChat.TabBar.addButton({
+	groups: ['channel', 'privategroup', 'directmessage'],
+	id: 'ideas-list',
+	i18nTitle: 'Ideas_List',
+	icon: 'icon-lightbulb',
+	template: 'ideasList',
+	order: 4
+});

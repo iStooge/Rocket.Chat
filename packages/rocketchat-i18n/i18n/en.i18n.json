@@ -533,6 +533,8 @@
   "Iframe_Integration_send_enable_Description" : "Send events to parent window",
   "Iframe_Integration_send_target_origin" : "Send target origin",
   "Iframe_Integration_send_target_origin_Description" : "Only pages with given origin will be able to listen to events or `*` for all origins. Example `http://localhost`",
+  "Ideas_List" : "Ideas",
+  "Ideas_list_empty" : "No ideas were generated yet.",
   "Importer_Archived" : "Archived",
   "Importer_done" : "Importing complete!",
   "Importer_finishing" : "Finishing up the import.",

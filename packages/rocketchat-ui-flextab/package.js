@@ -28,6 +28,7 @@ Package.onUse(function(api) {
 	api.addFiles('flex-tab/tabs/uploadedFilesList.html', 'client');
 	api.addFiles('flex-tab/tabs/userEdit.html', 'client');
 	api.addFiles('flex-tab/tabs/userInfo.html', 'client');
+	api.addFiles('flex-tab/tabs/ideasList.html', 'client');
 
 	api.addFiles('flex-tab/flexTabBar.coffee', 'client');
 	api.addFiles('flex-tab/tabs/membersList.coffee', 'client');
@@ -35,5 +36,7 @@ Package.onUse(function(api) {
 	api.addFiles('flex-tab/tabs/uploadedFilesList.coffee', 'client');
 	api.addFiles('flex-tab/tabs/userEdit.coffee', 'client');
 	api.addFiles('flex-tab/tabs/userInfo.coffee', 'client');
+	api.addFiles('flex-tab/tabs/ideasList.coffee', 'client');
+
 
 });
