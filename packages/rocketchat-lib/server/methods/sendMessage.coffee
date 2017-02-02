@@ -3,6 +3,9 @@ Meteor.methods
 
 		check message, Object
 
+		if not Meteor.userId()
+ 			throw new Meteor.Error('error-invalid-user', "Invalid user", { method: 'sendMessage' })
+
 		if message.ts
 			tsDiff = Math.abs(moment(message.ts).diff())
 			if tsDiff > 60000
@@ -14,9 +17,6 @@ Meteor.methods
 
 		if message.msg?.length > RocketChat.settings.get('Message_MaxAllowedSize')
 			throw new Meteor.Error('error-message-size-exceeded', 'Message size exceeds Message_MaxAllowedSize', { method: 'sendMessage' })
-
-		if not Meteor.userId()
-			throw new Meteor.Error('error-invalid-user', "Invalid user", { method: 'sendMessage' })
 
 		user = RocketChat.models.Users.findOneById Meteor.userId(), fields: username: 1, name: 1
 
@@ -40,10 +40,14 @@ Meteor.methods
 
 		RocketChat.sendMessage user, message, room
 
-# Limit a user to sending 5 msgs/second
+# Limit a user, who does not have the "bot" role, to sending 5 msgs/second
 DDPRateLimiter.addRule
 	type: 'method'
 	name: 'sendMessage'
 	userId: (userId) ->
-		return RocketChat.models.Users.findOneById(userId)?.username isnt RocketChat.settings.get('InternalHubot_Username')
+		return 'bot' not in RocketChat.models.Users.findOneById(userId)?.roles
+		user = RocketChat.models.Users.findOneById(userId)
+		if not user?.roles
+			return true
+ 		return 'bot' not in user.roles
 , 5, 1000
