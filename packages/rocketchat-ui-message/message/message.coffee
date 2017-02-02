@@ -119,6 +119,34 @@ Template.message.helpers
 
 		return msgReactions
 
+	singleReactions: (emojiType) ->
+		msgReactions = []
+		userUsername = Meteor.user().username
+
+		for emoji, reaction of @reactions
+			if emoji == emojiType
+				total = reaction.usernames.length
+				usernames = '@' + reaction.usernames.slice(0, 15).join(', @')
+
+				usernames = usernames.replace('@'+userUsername, t('You').toLowerCase())
+
+				if total > 15
+					usernames = usernames + ' ' + t('And_more', { length: total - 15 }).toLowerCase()
+				else
+					usernames = usernames.replace(/,([^,]+)$/, ' '+t('and')+'$1')
+
+				if usernames[0] isnt '@'
+					usernames = usernames[0].toUpperCase() + usernames.substr(1)
+
+				msgReactions.push
+					emoji: emoji
+					count: reaction.usernames.length
+					usernames: usernames
+					reaction: ' ' + t('Reacted_with').toLowerCase() + ' ' + emoji
+					userReacted: reaction.usernames.indexOf(userUsername) > -1
+
+		return msgReactions
+
 	markUserReaction: (reaction) ->
 		if reaction.userReacted
 			return {
@@ -126,8 +154,13 @@ Template.message.helpers
 			}
 
 	hideReactions: ->
-		return 'hidden' if _.isEmpty(@reactions)
+		match = /~idea~/i.test(@msg)
+		return 'hidden' if _.isEmpty(@reactions) or match
 
+	hideIfNotIdea: ->
+		match = /~idea~/i.test(@msg)
+		if !match
+			return 'hidden'
 
 	actionLinks: ->
 		msgActionLinks = []

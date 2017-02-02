@@ -101,5 +101,66 @@
 				<span class="icon-people-plus"></span>
 			</li>
 		</ul>
+		<!-- Added rection for Ideas -->
+		<ul class="reactions {{hideIfNotIdea}}">
+			{{#if singleReactions ":thumbsup:"}}
+			{{#each reaction in singleReactions ":thumbsup:"}}
+			<li data-emoji=":thumbsup:" {{markUserReaction reaction}}>
+					<span class="reaction-emoji"><span class="emojione emojione-1f44d" title=":thumbsup:">👍</span></span>
+					<span class="reaction-count">{{reaction.count}}</span>
+					<ul class="people">
+						<span style="font-weight: bold;">
+							{{reaction.usernames}} <span style="color: #aaa;">{{reaction.reaction}}</span>
+						</span>
+					</ul>
+			</li>
+			{{/each}}
+			{{else}}
+			<li data-emoji=":thumbsup:" {{markUserReaction reaction}}>
+					<span class="reaction-emoji"><span class="emojione emojione-1f44d" title=":thumbsup:">👍</span></span>
+					<span class="reaction-count">0</span>
+			</li>
+			{{/if}}
+
+			{{#if singleReactions ":heart_eyes:"}}
+			{{#each reaction in singleReactions ":heart_eyes:"}}
+			<li data-emoji=":heart_eyes:" {{markUserReaction reaction}}>
+					<span class="reaction-emoji"><span class="emojione emojione-1f60d" title=":heart_eyes:">😍</span></span>
+					<span class="reaction-count">{{reaction.count}}</span>
+					<ul class="people">
+						<span style="font-weight: bold;">
+							{{reaction.usernames}} <span style="color: #aaa;">{{reaction.reaction}}</span>
+						</span>
+					</ul>
+			</li>
+			{{/each}}
+			{{else}}
+			<li data-emoji=":heart_eyes:" {{markUserReaction reaction}}>
+					<span class="reaction-emoji"><span class="emojione emojione-1f60d" title=":heart_eyes:">😍</span></span>
+					<span class="reaction-count">0</span>
+			</li>
+			{{/if}}
+
+			{{#if singleReactions ":thumbsdown:"}}
+			{{#each reaction in singleReactions ":thumbsdown:"}}
+			<li data-emoji=":thumbsdown:" {{markUserReaction reaction}}>
+					<span class="reaction-emoji"><span class="emojione emojione-1f44e" title=":thumbsdown:">👎</span></span>
+					<span class="reaction-count">{{reaction.count}}</span>
+					<ul class="people">
+						<span style="font-weight: bold;">
+							{{reaction.usernames}} <span style="color: #aaa;">{{reaction.reaction}}</span>
+						</span>
+					</ul>
+			</li>
+			{{/each}}
+			{{else}}
+			<li data-emoji=":thumbsdown:" {{markUserReaction reaction}}>
+					<span class="reaction-emoji"><span class="emojione emojione-1f44e" title=":thumbsdown:">👎</span></span>
+					<span class="reaction-count">0</span>
+			</li>
+			{{/if}}
+
+
+		</ul>
 	</li>
 </template>
