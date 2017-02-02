@@ -110,7 +110,7 @@
 					<span class="reaction-count">{{reaction.count}}</span>
 					<ul class="people">
 						<span style="font-weight: bold;">
-							{{reaction.usernames}} <span style="color: #aaa;">{{reaction.reaction}}</span>
+							{{reaction.usernames}} <span style="color: #aaa;">voted with 👍</span>
 						</span>
 					</ul>
 			</li>
@@ -119,6 +119,11 @@
 			<li data-emoji=":thumbsup:" {{markUserReaction reaction}}>
 					<span class="reaction-emoji"><span class="emojione emojione-1f44d" title=":thumbsup:">👍</span></span>
 					<span class="reaction-count">0</span>
+					<ul class="people">
+						<span style="font-weight: bold;">
+							No Vote yet!
+						</span>
+					</ul>
 			</li>
 			{{/if}}
 
@@ -129,7 +134,7 @@
 					<span class="reaction-count">{{reaction.count}}</span>
 					<ul class="people">
 						<span style="font-weight: bold;">
-							{{reaction.usernames}} <span style="color: #aaa;">{{reaction.reaction}}</span>
+							{{reaction.usernames}} <span style="color: #aaa;">voted with 😍</span>
 						</span>
 					</ul>
 			</li>
@@ -138,6 +143,11 @@
 			<li data-emoji=":heart_eyes:" {{markUserReaction reaction}}>
 					<span class="reaction-emoji"><span class="emojione emojione-1f60d" title=":heart_eyes:">😍</span></span>
 					<span class="reaction-count">0</span>
+					<ul class="people">
+						<span style="font-weight: bold;">
+							No Vote yet!
+						</span>
+					</ul>
 			</li>
 			{{/if}}
 
@@ -148,7 +158,7 @@
 					<span class="reaction-count">{{reaction.count}}</span>
 					<ul class="people">
 						<span style="font-weight: bold;">
-							{{reaction.usernames}} <span style="color: #aaa;">{{reaction.reaction}}</span>
+							{{reaction.usernames}} <span style="color: #aaa;">voted with 👎</span>
 						</span>
 					</ul>
 			</li>
@@ -157,6 +167,11 @@
 			<li data-emoji=":thumbsdown:" {{markUserReaction reaction}}>
 					<span class="reaction-emoji"><span class="emojione emojione-1f44e" title=":thumbsdown:">👎</span></span>
 					<span class="reaction-count">0</span>
+					<ul class="people">
+						<span style="font-weight: bold;">
+							No Vote yet!
+						</span>
+					</ul>
 			</li>
 			{{/if}}
 
