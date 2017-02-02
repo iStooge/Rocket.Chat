@@ -2,7 +2,7 @@
 	<div class="content">
 		<div class="list-view ideas-list">
 			<div class="title">
-				<h2>{{_ "Ideas_List"}}</h2>
+				<h2>Your Ideas</h2>
 			</div>
 			<ul class="list clearfix lines">
 				{{#each files}}
@@ -31,10 +31,10 @@
 			</ul>
 			{{#if Template.subscriptionsReady}}
 				{{#unless hasFiles}}
-					<h2>{{_ "Ideas_list_empty"}}</h2>
-					<p>Siehe da: {{test}}</p>
-					<p>So viele ideen: {{ideas}}</p>
-					<p>{{look}}</p>
+					<h2>How might we separate the kids from fellow passengers?</h2>
+					<p>1. putting up a playground beside the gate</p>
+					<p>2. creating a family gate, seperated from the other gates</p>
+					<p>3. hiring specially trained people from the airport to watch after the children and play with them while waiting in the queue</p>
 				{{/unless}}
 			{{/if}}
 		</div>
