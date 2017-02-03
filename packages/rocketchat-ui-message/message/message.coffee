@@ -198,6 +198,19 @@ Template.message.helpers
 		match = /~vote~ ~(\d{1,2})/i.exec(@msg)
 		return match[1]
 
+	getColorWinnerPlace: ->
+		winner_place = /~winner~ ~(\d)/i.exec(@msg)
+		if winner_place
+			if Number(winner_place[1]) == 1
+				return 'winner-color-first'
+			if Number(winner_place[1]) == 2
+				return 'winner-color-second'
+			if Number(winner_place[1]) == 3
+				return 'winner-color-third'
+			if Number(winner_place[1]) > 3
+				return 'winner-color-else'	
+
+
 	actionLinks: ->
 		msgActionLinks = []
 
