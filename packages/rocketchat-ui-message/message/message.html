@@ -61,6 +61,96 @@
 			</div>
 		</span>
 		<div class="body" dir="auto">
+			
+			{{#if isIdeaOrVote}}
+			<div class="panel panel-default panel-horizontal">
+		    <div class="panel-heading">
+		        <h3 class="panel-title"><i class="icon-lightbulb"></i></h3>
+		    </div>
+		    <div class="panel-body">
+		    	{{{body}}}
+		    </div>
+		    <div class="panel-footer {{hideIfNotIdea}}">
+		    	<!-- Added rection for Ideas -->
+					<ul class="reactions">
+						{{#if singleReactions ":thumbsup:"}}
+						{{#each reaction in singleReactions ":thumbsup:"}}
+						<li data-emoji=":thumbsup:" {{markUserReaction reaction}}>
+								<span class="reaction-emoji"><span class="emojione emojione-1f44d" title=":thumbsup:">👍</span></span>
+								<span class="reaction-count">{{reaction.count}}</span>
+								<ul class="people">
+									<span style="font-weight: bold;">
+										{{reaction.usernames}} <span style="color: #aaa;">voted with 👍</span>
+									</span>
+								</ul>
+						</li>
+						{{/each}}
+						{{else}}
+						<li data-emoji=":thumbsup:" {{markUserReaction reaction}}>
+								<span class="reaction-emoji"><span class="emojione emojione-1f44d" title=":thumbsup:">👍</span></span>
+								<span class="reaction-count">0</span>
+								<ul class="people">
+									<span style="font-weight: bold;">
+										No Vote yet!
+									</span>
+								</ul>
+						</li>
+						{{/if}}
+
+						{{#if singleReactions ":heart_eyes:"}}
+						{{#each reaction in singleReactions ":heart_eyes:"}}
+						<li data-emoji=":heart_eyes:" {{markUserReaction reaction}}>
+								<span class="reaction-emoji"><span class="emojione emojione-1f60d" title=":heart_eyes:">😍</span></span>
+								<span class="reaction-count">{{reaction.count}}</span>
+								<ul class="people">
+									<span style="font-weight: bold;">
+										{{reaction.usernames}} <span style="color: #aaa;">voted with 😍</span>
+									</span>
+								</ul>
+						</li>
+						{{/each}}
+						{{else}}
+						<li data-emoji=":heart_eyes:" {{markUserReaction reaction}}>
+								<span class="reaction-emoji"><span class="emojione emojione-1f60d" title=":heart_eyes:">😍</span></span>
+								<span class="reaction-count">0</span>
+								<ul class="people">
+									<span style="font-weight: bold;">
+										No Vote yet!
+									</span>
+								</ul>
+						</li>
+						{{/if}}
+
+						{{#if singleReactions ":thumbsdown:"}}
+						{{#each reaction in singleReactions ":thumbsdown:"}}
+						<li data-emoji=":thumbsdown:" {{markUserReaction reaction}}>
+								<span class="reaction-emoji"><span class="emojione emojione-1f44e" title=":thumbsdown:">👎</span></span>
+								<span class="reaction-count">{{reaction.count}}</span>
+								<ul class="people">
+									<span style="font-weight: bold;">
+										{{reaction.usernames}} <span style="color: #aaa;">voted with 👎</span>
+									</span>
+								</ul>
+						</li>
+						{{/each}}
+						{{else}}
+						<li data-emoji=":thumbsdown:" {{markUserReaction reaction}}>
+								<span class="reaction-emoji"><span class="emojione emojione-1f44e" title=":thumbsdown:">👎</span></span>
+								<span class="reaction-count">0</span>
+								<ul class="people">
+									<span style="font-weight: bold;">
+										No Vote yet!
+									</span>
+								</ul>
+						</li>
+						{{/if}}
+
+
+					</ul>
+		    </div>
+			</div>
+
+			{{else}}
 			{{{body}}}
 			{{#if hasOembed}}
 				{{#each urls}}
@@ -72,6 +162,7 @@
 				{{injectIndex . @index}}
 				{{> messageAttachment}}
 			{{/each}}
+			{{/if}}
 		</div>
 		<ul class="actionLinks {{hideActionLinks}}">
 			{{#each actionLink in actionLinks}}
@@ -101,81 +192,6 @@
 				<span class="icon-people-plus"></span>
 			</li>
 		</ul>
-		<!-- Added rection for Ideas -->
-		<ul class="reactions {{hideIfNotIdea}}">
-			{{#if singleReactions ":thumbsup:"}}
-			{{#each reaction in singleReactions ":thumbsup:"}}
-			<li data-emoji=":thumbsup:" {{markUserReaction reaction}}>
-					<span class="reaction-emoji"><span class="emojione emojione-1f44d" title=":thumbsup:">👍</span></span>
-					<span class="reaction-count">{{reaction.count}}</span>
-					<ul class="people">
-						<span style="font-weight: bold;">
-							{{reaction.usernames}} <span style="color: #aaa;">voted with 👍</span>
-						</span>
-					</ul>
-			</li>
-			{{/each}}
-			{{else}}
-			<li data-emoji=":thumbsup:" {{markUserReaction reaction}}>
-					<span class="reaction-emoji"><span class="emojione emojione-1f44d" title=":thumbsup:">👍</span></span>
-					<span class="reaction-count">0</span>
-					<ul class="people">
-						<span style="font-weight: bold;">
-							No Vote yet!
-						</span>
-					</ul>
-			</li>
-			{{/if}}
-
-			{{#if singleReactions ":heart_eyes:"}}
-			{{#each reaction in singleReactions ":heart_eyes:"}}
-			<li data-emoji=":heart_eyes:" {{markUserReaction reaction}}>
-					<span class="reaction-emoji"><span class="emojione emojione-1f60d" title=":heart_eyes:">😍</span></span>
-					<span class="reaction-count">{{reaction.count}}</span>
-					<ul class="people">
-						<span style="font-weight: bold;">
-							{{reaction.usernames}} <span style="color: #aaa;">voted with 😍</span>
-						</span>
-					</ul>
-			</li>
-			{{/each}}
-			{{else}}
-			<li data-emoji=":heart_eyes:" {{markUserReaction reaction}}>
-					<span class="reaction-emoji"><span class="emojione emojione-1f60d" title=":heart_eyes:">😍</span></span>
-					<span class="reaction-count">0</span>
-					<ul class="people">
-						<span style="font-weight: bold;">
-							No Vote yet!
-						</span>
-					</ul>
-			</li>
-			{{/if}}
-
-			{{#if singleReactions ":thumbsdown:"}}
-			{{#each reaction in singleReactions ":thumbsdown:"}}
-			<li data-emoji=":thumbsdown:" {{markUserReaction reaction}}>
-					<span class="reaction-emoji"><span class="emojione emojione-1f44e" title=":thumbsdown:">👎</span></span>
-					<span class="reaction-count">{{reaction.count}}</span>
-					<ul class="people">
-						<span style="font-weight: bold;">
-							{{reaction.usernames}} <span style="color: #aaa;">voted with 👎</span>
-						</span>
-					</ul>
-			</li>
-			{{/each}}
-			{{else}}
-			<li data-emoji=":thumbsdown:" {{markUserReaction reaction}}>
-					<span class="reaction-emoji"><span class="emojione emojione-1f44e" title=":thumbsdown:">👎</span></span>
-					<span class="reaction-count">0</span>
-					<ul class="people">
-						<span style="font-weight: bold;">
-							No Vote yet!
-						</span>
-					</ul>
-			</li>
-			{{/if}}
-
-
-		</ul>
+		
 	</li>
 </template>

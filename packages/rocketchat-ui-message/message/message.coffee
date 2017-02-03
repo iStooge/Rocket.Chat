@@ -162,6 +162,19 @@ Template.message.helpers
 		if !match
 			return 'hidden'
 
+	isIdea: ->
+		match = /~idea~/i.test(@msg)
+		return match
+
+	isVote: ->
+		match = /~vote~/i.test(@msg)
+		return match
+
+	isIdeaOrVote: ->
+		idea = /~idea~/i.test(@msg)
+		vote = /~vote~/i.test(@msg)
+		return vote or idea
+
 	actionLinks: ->
 		msgActionLinks = []
 
