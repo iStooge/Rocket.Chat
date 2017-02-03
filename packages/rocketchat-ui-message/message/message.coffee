@@ -162,6 +162,11 @@ Template.message.helpers
 		if !match
 			return 'hidden'
 
+	classIfVote: ->
+		vote = /~vote~/i.test(@msg)
+		if vote
+			return 'panel-vote'
+
 	isIdea: ->
 		match = /~idea~/i.test(@msg)
 		return match
@@ -174,6 +179,24 @@ Template.message.helpers
 		idea = /~idea~/i.test(@msg)
 		vote = /~vote~/i.test(@msg)
 		return vote or idea
+
+	getIdeaIcon: ->
+		winner = /~winner~/i.test(@msg)
+		idea = /~idea~/i.test(@msg)
+		vote = /~vote~/i.test(@msg)
+		match = /~vote~ (\d)/i.exec(@msg)
+		console.log "HIER IST DER MATCH"
+		console.log match
+		if winner
+			return 'icon-award'
+		else if idea
+			return 'icon-lightbulb'
+		else if vote
+			return 'hidden'
+
+	countIfVote: ->
+		match = /~vote~ ~(\d{1,2})/i.exec(@msg)
+		return match[1]
 
 	actionLinks: ->
 		msgActionLinks = []
