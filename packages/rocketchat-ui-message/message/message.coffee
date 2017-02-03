@@ -154,11 +154,11 @@ Template.message.helpers
 			}
 
 	hideReactions: ->
-		match = /~idea~/i.test(@msg)
+		match = /~vote~/i.test(@msg)
 		return 'hidden' if _.isEmpty(@reactions) or match
 
 	hideIfNotIdea: ->
-		match = /~idea~/i.test(@msg)
+		match = /~vote~/i.test(@msg)
 		if !match
 			return 'hidden'
 
