@@ -36,6 +36,7 @@ Package.onUse(function(api) {
 	api.addAssets('assets/stylesheets/fontello.css', 'server');
 	api.addAssets('assets/stylesheets/rtl.less', 'server');
 	api.addAssets('assets/stylesheets/swipebox.min.css', 'server');
+	api.addAssets('assets/stylesheets/custom.css', 'server');
 });
 
 Npm.depends({
