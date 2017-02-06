@@ -34,8 +34,6 @@
 
 figcaption {
   text-align: center;
-  margin-bottom: 15px;
-  font-style: italic;
 }
 
 /************************
@@ -73,8 +71,8 @@ strike {
   margin-top: 75px;
 }
 
-.well {
-  min-height: 60px;
+.well-citation {
+  min-height: 120px;
 }
 
 /************************
