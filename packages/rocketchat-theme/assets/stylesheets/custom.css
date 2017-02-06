@@ -32,10 +32,10 @@
     font-size: 18px;
 }
 
-.intro-text {
-  font-size: 14px;
-    margin-right: 20px;
-    margin-left: 20px;
+figcaption {
+  text-align: center;
+  margin-bottom: 15px;
+  font-style: italic;
 }
 
 /************************
@@ -54,6 +54,10 @@ strike {
   display: none;
 }
 
+
+/*************************
+* Styling for Home Pape
+**/
 .collapse-switch {
   display: none;
 }
@@ -63,6 +67,14 @@ strike {
     margin: 0 auto;
     background-position: center!important;
     box-shadow: none!important;
+}
+
+#collapseCitation {
+  margin-top: 75px;
+}
+
+.well {
+  min-height: 60px;
 }
 
 /************************
