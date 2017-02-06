@@ -1,6 +1,8 @@
 .side-nav .footer img {
-  left: 42px!important;
-  top: 13px!important;
+  left: 15px!important;
+  top: 10px!important;
+  max-width: 230px!important;
+  max-height: 62px!important;
 }
 
 /*Margin for Buttons*/
