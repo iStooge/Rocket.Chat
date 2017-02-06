@@ -495,8 +495,6 @@
   "Iframe_Integration_receive_enable_Description" : "Erlaube dem übergeordneten Fenster (parent window) Befehle an Rocket.Chat zu senden.",
   "Iframe_Integration_receive_origin_Description" : "Nur Seiten mit der angegebenen Herkunft erlauben Befehle abzusetzen. `*` für alle Seiten. Mehrere Werte können mittels `,` getrennt werden. Beispiel: `http://localhost,https://localhost`",
   "Iframe_Integration_send_enable_Description" : "Sende Events an das übergeordnete Fenster (parent window)",
-  "Ideas_List" : "Ideen",
-  "Ideas_list_empty" : "Es wurden noch keine Ideen generiert.",
   "Importer_Archived" : "archiviert",
   "Importer_done" : "Die Daten wurden erfolgreich importiert!",
   "Importer_finishing" : "Import abgeschlossen.",
