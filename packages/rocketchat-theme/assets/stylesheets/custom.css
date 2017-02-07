@@ -65,6 +65,8 @@ strike {
     margin: 0 auto;
     background-position: center!important;
     box-shadow: none!important;
+  height: 380px;
+  width: 800px;
 }
 
 #collapseCitation {
