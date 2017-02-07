@@ -5,7 +5,7 @@ Meteor.startup ->
 				groups: ['channel', 'privategroup', 'directmessage'],
 				id: 'pinned-messages',
 				i18nTitle: 'Pinned_Messages',
-				icon: 'icon-pin',
+				icon: 'icon-lightbulb',
 				template: 'pinnedMessages',
 				order: 10
 			})

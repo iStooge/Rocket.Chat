@@ -2,11 +2,13 @@
 	<div class="content">
 		<div class="list-view pinned-messages-list">
 			<div class="title">
-				<h2>{{_ "Pinned_Messages"}}</h2>
+				<!-- <h2>{{_ "Pinned_Messages"}}</h2> -->
+				<h2>Ideas</h2>
 			</div>
 			{{#if Template.subscriptionsReady}}
 				{{#unless hasMessages}}
-					<h2>{{_ "No_pinned_messages"}}</h2>
+					<!-- <h2>{{_ "No_pinned_messages"}}</h2> -->
+					<h2>No ideas yet. Add an idea first!</h2>
 				{{/unless}}
 			{{/if}}
 		</div>

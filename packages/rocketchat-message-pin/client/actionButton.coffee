@@ -1,7 +1,7 @@
 Meteor.startup ->
 	RocketChat.MessageAction.addButton
 		id: 'pin-message'
-		icon: 'icon-pin'
+		icon: 'icon-lightbulb'
 		i18nLabel: 'Pin_Message'
 		context: [
 			'pinned'
@@ -27,7 +27,7 @@ Meteor.startup ->
 
 	RocketChat.MessageAction.addButton
 		id: 'unpin-message'
-		icon: 'icon-pin rotate-45'
+		icon: 'icon-lightbulb rotate-45'
 		i18nLabel: 'Unpin_Message'
 		context: [
 			'pinned'
