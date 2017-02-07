@@ -56,11 +56,11 @@
 				<span class="private">{{_ "Only_you_can_see_this_message"}}</span>
 			{{/if}}
 
-			<div class="message-cog-container {{hideCog}}">
+			<div class="message-cog-container {{hideCog}} {{hideIfHiddenInfo}}">
 				<i class="icon-cog message-cog" aria-label="{{_ "Actions"}}"></i>
 			</div>
 		</span>
-		<div class="body" dir="auto">
+		<div class="body {{hideIfHiddenInfo}}" dir="auto">
 			
 			{{#if isIdeaOrVote}}
 			<div class="panel {{classIfVote}} panel-default panel-horizontal">
@@ -151,17 +151,26 @@
 			</div>
 
 			{{else}}
-			{{{body}}}
-			{{#if hasOembed}}
-				{{#each urls}}
-					{{injectIndex . @index}}
-					{{> oembedBaseWidget}}
-				{{/each}}
-			{{/if}}
-			{{#each attachments}}
-				{{injectIndex . @index}}
-				{{> messageAttachment}}
-			{{/each}}
+				{{#if isInfo}}
+				<div class="panel panel-default panel-horizontal">
+		    <div class="panel-heading text-center">
+		    	{{{body}}}
+		    </div>
+		    </div>
+				{{else}}
+					{{{body}}}
+					{{#if hasOembed}}
+						{{#each urls}}
+							{{injectIndex . @index}}
+							{{> oembedBaseWidget}}
+						{{/each}}
+					{{/if}}
+					{{#each attachments}}
+						{{injectIndex . @index}}
+						{{> messageAttachment}}
+					{{/each}}
+				{{/if}}
+
 			{{/if}}
 		</div>
 		<ul class="actionLinks {{hideActionLinks}}">

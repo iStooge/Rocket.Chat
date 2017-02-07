@@ -142,3 +142,33 @@ strike {
 .winner-color-else {
   color: black;
 }
+
+/*
+**Pinned Idea Styling
+*/
+
+#rocket-chat > div.main-content.flex-opened > div > div > section.flex-tab > div > ul > li.pinned {
+  padding-left: 20px;
+}
+
+#rocket-chat > div.main-content.flex-opened > div > div > section.flex-tab > div > ul > li > button.user-card-message {
+  visibility: hidden;
+}
+
+#rocket-chat > div.main-content.flex-opened > div > div > section.flex-tab > div > ul > li > span.info > span.time {
+  margin-left: 169px;
+} 
+
+#rocket-chat > div.main-content.flex-opened > div > div > section.flex-tab > div > ul > li > span.info {
+  margin-left: -47px; 
+}
+
+/*Hide Info*/
+#chat-window-GENERAL > div.messages-box > div.wrapper > ul > li > div.hideInfo {
+  visibility: hidden;
+  height: 0px;
+}
+
+#chat-window-GENERAL > div.messages-box > div.wrapper > ul > li > span > div.hideInfo {
+  display: none;
+}

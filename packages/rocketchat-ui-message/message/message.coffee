@@ -180,6 +180,15 @@ Template.message.helpers
 		vote = /~vote~/i.test(@msg)
 		return vote or idea
 
+	isInfo: ->
+		info = /~info~/i.test(@msg)
+		return info
+
+	hideIfHiddenInfo: ->
+		hidden = /~hidden~/i.test(@msg)
+		if hidden
+			return 'hideInfo'
+
 	getIdeaIcon: ->
 		winner = /~winner~/i.test(@msg)
 		idea = /~idea~/i.test(@msg)
